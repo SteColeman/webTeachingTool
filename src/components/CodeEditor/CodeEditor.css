@@ -1,0 +1,33 @@
+#editorRoot {
+    background-color: #282C34;
+    color: #7f7f7f;
+    line-height: 100%;
+    padding-top: 1rem;
+    overflow: scroll;
+    /* height: 100%; */
+}
+
+#editorSection {
+    display: flex;
+    padding-top: 10px;
+    text-align: right;
+}
+
+ul {
+    list-style: none;
+    margin-top: 5px;
+    margin-right: 10px;
+}
+
+textarea {
+    width: 90%;
+    resize: none;
+    border: 1px solid red;
+    background-color: #282C34;
+    color: #bebebe;
+}
+
+.file {
+    border: 1px solid #bebebe;
+    display: inline-block;
+}
