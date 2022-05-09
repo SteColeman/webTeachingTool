@@ -1,0 +1,14 @@
+#loginScreen, #toggleScreen {
+    height: 100vh;
+    background-color: grey;
+}
+
+.content {
+    margin-left: auto;
+
+}
+
+input {
+    padding: .5rem;
+    border-radius: 10px;
+}

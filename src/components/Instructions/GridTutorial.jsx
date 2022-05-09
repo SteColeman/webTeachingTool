@@ -1,8 +1,6 @@
 import React from "react";
-// import {instructions} from '../../instructions'
 
-class InstructionsGrid extends React.Component {
-
+class GridTutorial extends React.Component {
 
     render() {
         return(
@@ -14,4 +12,4 @@ class InstructionsGrid extends React.Component {
     }
 }
 
-export default InstructionsGrid;
+export default GridTutorial;

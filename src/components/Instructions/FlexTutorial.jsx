@@ -1,6 +1,6 @@
 import React from "react";
 
-class InstructionsFlex extends React.Component {
+class FlexTutorial extends React.Component {
    
     render() {
         return(
@@ -14,4 +14,4 @@ class InstructionsFlex extends React.Component {
 }
 
 
-export default InstructionsFlex;
+export default FlexTutorial;

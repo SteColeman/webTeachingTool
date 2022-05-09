@@ -1,71 +1,95 @@
 import React from "react";
 import CodeEditor from '../CodeEditor/CodeEditor.jsx';
 import Browser from '../Browser/Browser.jsx'
-import Tutorial from '../Instructions/Tutorial.jsx'
-import InstructionsGrid from '../Instructions/InstructionsGrid';
-import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
-import Login from '../Login/Login.jsx';
-// import { render } from "@testing-library/react";
-
+import FlexTutorial from '../Instructions/FlexTutorial.jsx'
+import GridTutorial from '../Instructions/GridTutorial'
 
 class LearnerInterface extends React.Component {
-    
-render() {
-    function renderTutorial() {
 
+    render() {   
+    /**
+     * using fetch to check the db for which tutorial to display
+     * corrosponding tutorial will be showed on render
+     */
+    function Test() {
         var tutorialType;
         fetch("https://api.airtable.com/v0/appvUkYfYyf0YpQUD/Table%201?api_key=keyzpKdKzXgaZVthy")
         .then((res) => res.json())
         .then((data) => {
-        // setRecipes(data.records);
-          tutorialType = data.records[0].fields.tutorialType;  
-          if(tutorialType === 'flex') {
-              // console.log('Flex Tutorial') 
-              // newTutorial(tutorialType)
-              return  <Tutorial />
-    
-              } else if(tutorialType === 'grid') {
-              // console.log('Grid Tutorial') 
-              return  <InstructionsGrid />
-              // newTutorial(tutorialType)
-              }
-          })
-        .catch((error) => {
-          console.log(error);
+            tutorialType = data.records[0].fields.tutorialType;  
+            // return tutorialType
+            console.log(tutorialType);
         });
-      }
-        return ( 
+        console.log(tutorialType)
 
-          
+        if(tutorialType === 'grid') {
+            return <GridTutorial />
+        } else if(tutorialType === 'flex') {
+            return <FlexTutorial />
+        } else {
+            return <h1>Error, please contact a tutor</h1>
+        }
+    }
+       
+        return (
             <div id='appContainer'>
-              {/* <Link to="/Login">Admin</Link> */}
                 <div id='instructionComponent'>
-                {renderTutorial}
-                {(tutorialType) => {
-                  if(tutorialType === 'flex' || 'grid') {
-                  return <Tutorial />
-                }
-              }}
-            </div>
-          
-              <div id='codeEditorComponent'>
-                <CodeEditor />
-              </div>
-          
-              <div id='browserComponent'>
-                <Browser />
-              </div>
-            </div>
+                    <Test />
+                </div>
+        
+                <div id='codeEditorComponent'>
+                    <CodeEditor />
+                </div>
+            
+                <div id='browserComponent'>
+                    <Browser />
+                </div>
+            </div>  
+                )
 
-          
-          
-          
-            );
+
+
+            // if(tutorialType === 'flex') {
+            //     return ( 
+            //         <div id='appContainer'>
+            //             <div id='instructionComponent'>
+            //                 <FlexTutorial />
+            //             </div>
+                
+            //             <div id='codeEditorComponent'>
+            //                 <CodeEditor />
+            //             </div>
+                    
+            //             <div id='browserComponent'>
+            //                 <Browser />
+            //             </div>
+            //         </div>  
+            //     )
+            // } else if(tutorialType === 'grid') {
+            //     return ( 
+            //     <div id='appContainer'>
+            //         <div id='instructionComponent'>
+            //             <GridTutorial />
+            //         </div>
+            
+            //         <div id='codeEditorComponent'>
+            //             <CodeEditor />
+            //         </div>
+                
+            //         <div id='browserComponent'>
+            //             <Browser />
+            //         </div>
+            //     </div>  
+            //     )
+            // } else {
+            //     <h1>Error please contact a tutor</h1>
+            // }
+
+    }
     
+        
 }
+    
 
-
-
-}
 
 export default LearnerInterface;

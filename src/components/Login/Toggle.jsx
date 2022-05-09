@@ -1,6 +1,8 @@
 import React from "react";
+import './Login.css'
 
 var Airtable = require('airtable');
+//airtable 'base' key and API key for authentication
 var base = new Airtable({apiKey: 'keyzpKdKzXgaZVthy'}).base('appvUkYfYyf0YpQUD');
 
 class Toggle extends React.Component {
@@ -37,10 +39,13 @@ class Toggle extends React.Component {
         }
 
         return (
-            <div>
+            //on click the button clicked will call the tutorialSelector function and set the corrosponding value in the database
+            <div id='toggleScreen'>
                 <h1>Admin CSS Switcher</h1>
-            <input value='flex' type="checkbox" onClick={() => tutorialSelector('flex')} /> Flex CSS Tutorial
-            <input value='grid' type="checkbox" onClick={() => tutorialSelector('grid')} /> Grid CSS Tutorial
+
+                <input value='flex' type="checkbox" onClick={() => tutorialSelector('flex')} /> Flex CSS Tutorial
+                <br />
+                <input value='grid' type="checkbox" onClick={() => tutorialSelector('grid')} /> Grid CSS Tutorial
 
             </div>
         )
