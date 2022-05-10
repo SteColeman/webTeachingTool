@@ -5,9 +5,12 @@ import Login from './components/Login/Login';
 import LearnerInterface from './components/LearnerInterface/LearnerInterface';
 
 function App() {
-
+/**
+ * return to the UI the learner interface component which contains all the other components
+ * react router is used to add the tutor login component to the screen while adding a /login to the url
+ */
   return(
-    
+
     <div>
       <Router>
         <Link to="/login">Login</Link>

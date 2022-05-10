@@ -7,34 +7,36 @@ import GridTutorial from '../Instructions/GridTutorial'
 class LearnerInterface extends React.Component {
 
     render() {   
+
     /**
      * using fetch to check the db for which tutorial to display
      * corrosponding tutorial will be showed on render
      */
-    function Test() {
-        var tutorialType;
-        fetch("https://api.airtable.com/v0/appvUkYfYyf0YpQUD/Table%201?api_key=keyzpKdKzXgaZVthy")
-        .then((res) => res.json())
-        .then((data) => {
-            tutorialType = data.records[0].fields.tutorialType;  
-            // return tutorialType
-            console.log(tutorialType);
-        });
-        console.log(tutorialType)
 
-        if(tutorialType === 'grid') {
-            return <GridTutorial />
-        } else if(tutorialType === 'flex') {
-            return <FlexTutorial />
-        } else {
-            return <h1>Error, please contact a tutor</h1>
+        function Tutorial() {
+            var tutorialType;
+            fetch("https://api.airtable.com/v0/appvUkYfYyf0YpQUD/Table%201?api_key=keyzpKdKzXgaZVthy")
+            .then((res) => res.json())
+            .then((data) => {
+                tutorialType = data.records[0].fields.tutorialType;  
+                // return tutorialType
+                console.log(tutorialType);
+            });
+    
+            if(tutorialType === 'grid') {
+                return GridTutorial()
+            } else if(tutorialType === 'flex') {
+                return FlexTutorial()
+            } else {
+                return <h1>Error, please contact a tutor</h1>
+            }
         }
-    }
+    
        
         return (
             <div id='appContainer'>
                 <div id='instructionComponent'>
-                    <Test />
+                    <Tutorial />
                 </div>
         
                 <div id='codeEditorComponent'>
@@ -84,6 +86,18 @@ class LearnerInterface extends React.Component {
             // } else {
             //     <h1>Error please contact a tutor</h1>
             // }
+
+            function GridTutorial() {
+                return(
+                    <h1>grid!</h1>
+                )
+            }
+
+            function FlexTutorial() {
+                return(
+                    <h1>flex!</h1>
+                )
+            }
 
     }
     
