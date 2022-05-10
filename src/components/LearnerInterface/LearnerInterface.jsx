@@ -24,9 +24,9 @@ class LearnerInterface extends React.Component {
             });
     
             if(tutorialType === 'grid') {
-                return GridTutorial()
+                return <GridTutorial />
             } else if(tutorialType === 'flex') {
-                return FlexTutorial()
+                return <FlexTutorial />
             } else {
                 return <h1>Error, please contact a tutor</h1>
             }
