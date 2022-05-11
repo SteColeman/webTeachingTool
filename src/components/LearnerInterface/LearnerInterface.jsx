@@ -12,7 +12,6 @@ class LearnerInterface extends React.Component {
      * using fetch to check the db for which tutorial to display
      * corrosponding tutorial will be showed on render
      */
-
         function Tutorial() {
             var tutorialType;
             fetch("https://api.airtable.com/v0/appvUkYfYyf0YpQUD/Table%201?api_key=keyzpKdKzXgaZVthy")
@@ -32,7 +31,6 @@ class LearnerInterface extends React.Component {
             }
         }
     
-       
         return (
             <div id='appContainer'>
                 <div id='instructionComponent'>
@@ -47,7 +45,7 @@ class LearnerInterface extends React.Component {
                     <Browser />
                 </div>
             </div>  
-                )
+        )
 
 
 
@@ -86,24 +84,7 @@ class LearnerInterface extends React.Component {
             // } else {
             //     <h1>Error please contact a tutor</h1>
             // }
-
-            function GridTutorial() {
-                return(
-                    <h1>grid!</h1>
-                )
-            }
-
-            function FlexTutorial() {
-                return(
-                    <h1>flex!</h1>
-                )
-            }
-
-    }
-    
-        
+    }     
 }
-    
-
 
 export default LearnerInterface;

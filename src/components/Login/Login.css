@@ -1,11 +1,7 @@
 #loginScreen, #toggleScreen {
     height: 100vh;
     background-color: grey;
-}
-
-.content {
-    margin-left: auto;
-
+    margin: auto;
 }
 
 input {

@@ -34,7 +34,7 @@ class Login extends React.Component {
             return (
                 <div id='loginScreen'>
 
-                    <div class='content'>
+                    <div class='loginContent'>
                         <h2>Edge Hill Teaching Environment Admin</h2>
 
                         <input type="password" placeholder="Password" id='Password' /> 
