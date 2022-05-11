@@ -27,7 +27,7 @@ class LearnerInterface extends React.Component {
             } else if(tutorialType === 'flex') {
                 return <FlexTutorial />
             } else {
-                return <h1>Error, please contact a tutor</h1>
+                return <div id='tutorialError'><h1>Error, please contact a tutor</h1></div>
             }
         }
     

@@ -1,4 +1,5 @@
 import React from "react";
+import './Browser.css'
 import DOMPurify from 'dompurify';
 
 class Browser extends React.Component {
@@ -40,7 +41,7 @@ class Browser extends React.Component {
         }
         
         return(
-            <div>
+            <div id="browserRoot">
                  <button onClick={() => {this.updateBrowser()}}>Save</button>
                 <div id='browserRoot' contentEditable='true' dangerouslySetInnerHTML={{__html: userInput}} />
             </div>
